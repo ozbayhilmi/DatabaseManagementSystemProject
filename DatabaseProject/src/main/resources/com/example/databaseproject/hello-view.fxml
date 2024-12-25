@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseproject.HelloController">
+   <children>
+      <Pane layoutX="-18.0" layoutY="-6.0" prefHeight="408.0" prefWidth="318.0" style="-fx-background-radius: 30; -fx-background-color: #1e90ff;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="-18.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="-6.0">
+         <children>
+            <Text fill="WHITE" layoutX="72.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SOYAP">
+               <font>
+                  <Font name="American Typewriter" size="52.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="68.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sosyal Yardımlaşma Platfromu" wrappingWidth="183.3984375" />
+         </children>
+      </Pane>
+      <Pane layoutX="300.0" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: white;">
+         <children>
+            <TextField fx:id="email" layoutX="65.0" layoutY="138.0" prefHeight="30.0" prefWidth="183.0" promptText="E-Mail" />
+            <PasswordField fx:id="password" layoutX="65.0" layoutY="189.0" prefHeight="30.0" prefWidth="183.0" promptText="Şifre" />
+            <Text fx:id="text" layoutX="65.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="183.0" />
+            <Button layoutX="115.0" layoutY="275.0" mnemonicParsing="false" onAction="#login_button" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #1e90ff;" text="Giriş" textFill="WHITE" />
+         </children></Pane>
+      <Hyperlink layoutX="334.0" layoutY="327.0" onAction="#register_button" text="Henüz üye değilseniz lütfen kaydolun" textFill="DODGERBLUE" />
+   </children>
+</AnchorPane>

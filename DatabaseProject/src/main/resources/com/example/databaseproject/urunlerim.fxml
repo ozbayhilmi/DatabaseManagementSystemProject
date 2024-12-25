@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseproject.UrunlerimController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="180.0" layoutY="87.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="600.0" prefWidth="222.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="600.0" prefWidth="222.4" style="-fx-background-color: #0092FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="11.0" prefHeight="87.0" prefWidth="222.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="39.0" layoutY="20.0" text="Ürünlerim" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="33.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Button layoutX="54.0" layoutY="237.0" mnemonicParsing="false" onAction="#favoriler_button" prefHeight="39.0" prefWidth="119.0" text="Favorilerim" />
+                              <Button layoutX="54.0" layoutY="300.0" mnemonicParsing="false" onAction="#siparislerim_buton" prefHeight="39.0" prefWidth="118.0" text="Siparişlerim" />
+                              <Button layoutX="64.0" layoutY="535.0" mnemonicParsing="false" onAction="#cikis_button" prefHeight="34.0" prefWidth="94.0" text="Çıkış Yap" />
+                              <Button layoutX="65.0" layoutY="490.0" mnemonicParsing="false" onAction="#ana_menu" prefHeight="32.0" prefWidth="92.0" text="Ana Menü" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="87.0" prefWidth="878.0" style="-fx-background-color: #0092ff;">
+                           <children>
+                              <TextField fx:id="searchField" layoutX="33.0" layoutY="24.0" prefHeight="39.0" prefWidth="499.0" style="-fx-background-radius: 50;" />
+                              <Button layoutX="607.0" layoutY="24.0" mnemonicParsing="false" onAction="#ara_button" prefHeight="38.0" prefWidth="52.0" style="-fx-background-radius: 50;" text="Ara">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="87.0" prefHeight="324.0" prefWidth="534.0">
+                           <children>
+                              <TableView fx:id="itemTable" layoutX="108.0" layoutY="14.0" prefHeight="324.0" prefWidth="682.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-140.0" AnchorPane.topAnchor="10.0">
+                                <columns>
+                                  <TableColumn fx:id="columnName" prefWidth="155.5" text="Ürün Adı" />
+                                  <TableColumn fx:id="columnDescription" prefWidth="114.5" text="Açıklama" />
+                                    <TableColumn fx:id="columnPrice" prefWidth="113.0" text="Fiyat" />
+                                    <TableColumn fx:id="columnLocation" prefWidth="120.5" text="Konum" />
+                                    <TableColumn fx:id="columnCategory" prefWidth="159.5" text="Kategori" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="1.0" layoutY="410.0" prefHeight="190.0" prefWidth="877.0">
+                           <children>
+                              <Label layoutX="29.0" layoutY="22.0" text="Ürün Adı" />
+                              <Label layoutX="411.0" layoutY="62.0" text="Kategori" />
+                              <Label layoutX="26.0" layoutY="62.0" text="Açıklama" />
+                              <Label layoutX="415.0" layoutY="23.0" text="Konum" />
+                              <TextField fx:id="urun_adi" layoutX="100.0" layoutY="18.0" prefHeight="26.0" prefWidth="213.0" />
+                              <TextField fx:id="aciklama" layoutX="99.0" layoutY="58.0" prefHeight="30.0" prefWidth="214.0" />
+                              <TextField fx:id="konum" layoutX="481.0" layoutY="18.0" prefHeight="30.0" prefWidth="215.0" />
+                              <ChoiceBox fx:id="kategoriChoiceBox" layoutX="482.0" layoutY="58.0" prefHeight="26.0" prefWidth="213.0" />
+                              <Button layoutX="214.0" layoutY="149.0" mnemonicParsing="false" onAction="#ekle_button" prefWidth="88.8" text="Ürün Ekle" />
+                              <Button layoutX="345.0" layoutY="150.0" mnemonicParsing="false" onAction="#sil_button" prefWidth="88.8" text="Ürün Sil" />
+                              <Button layoutX="485.0" layoutY="148.0" mnemonicParsing="false" onAction="#duzenle_button" text="Ürün Düzenle" />
+                              <Label layoutX="38.0" layoutY="99.0" text="Fiyat" />
+                              <TextField fx:id="fiyat" layoutX="100.0" layoutY="99.0" prefHeight="30.0" prefWidth="212.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

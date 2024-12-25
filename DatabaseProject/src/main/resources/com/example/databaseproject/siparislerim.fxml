@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseproject.OrderController">
+    <children>
+        <Pane layoutX="-10.0" layoutY="1.0" prefHeight="578.0" prefWidth="859.0" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="1.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="575.0" layoutX="-6.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" layoutX="-10.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="866.0" />
+
+                <!-- Arama Alanı -->
+                <TextField fx:id="searchField" layoutX="174.0" layoutY="19.0" prefHeight="30.0" prefWidth="384.0" promptText="Ürün ara..." style="-fx-background-radius: 30;" />
+                <Button layoutX="575.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchButton" style="-fx-background-radius: 30; -fx-font-size: 14px;" text="Ara" />
+
+                <!-- Navigasyon Butonları -->
+                <Button layoutX="35.0" layoutY="195.0" mnemonicParsing="false" onAction="#accountButton" prefHeight="30.0" prefWidth="82.0" style="-fx-font-size: 12px; -fx-font-weight: bold;" text="Hesabım" />
+                <Button layoutX="36.0" layoutY="237.0" mnemonicParsing="false" onAction="#productsButton" prefHeight="30.0" prefWidth="81.0" style="-fx-font-size: 12px; -fx-font-weight: bold;" text="Ürünlerim" />
+
+                <!-- Favoriler Tablosu -->
+                <TableView fx:id="orderTable" layoutX="165.0" layoutY="132.0" prefHeight="306.0" prefWidth="645.0">
+                    <columns>
+                        <TableColumn fx:id="colOrderId" prefWidth="116.46189880371094" text="Order Id" />
+                  <TableColumn fx:id="colItemId" prefWidth="91.03811645507812" text="Item Id" />
+                        <TableColumn fx:id="colQuantity" prefWidth="111.07626342773438" text="Kalite" />
+                        <TableColumn fx:id="colStatus" prefWidth="106.92373657226562" text="Durum" />
+                        <TableColumn fx:id="colItemName" prefWidth="105.0" text="İtem İsmi" />
+                        <TableColumn fx:id="colItemPrice" prefWidth="114.5" text="Fiyat" />
+                    </columns>
+                </TableView>
+
+                <!-- Çıkış Butonu -->
+                <Button layoutX="39.0" layoutY="533.0" mnemonicParsing="false" onAction="#cikis_button" style="-fx-background-color: red; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5px;" text="Çıkış Yap" textFill="WHITE" />
+
+                <!-- Başlık -->
+                <Text layoutX="176.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SİPARİŞLERİM" textAlignment="CENTER">
+                    <font>
+                        <Font name="Adelle Sans Devanagari Semibold" size="16.0" />
+                    </font>
+                </Text>
+            <Button layoutX="423.0" layoutY="457.0" mnemonicParsing="false" onAction="#delete_button" text="Seçilen Ürünü Sil" />
+            <Button layoutX="37.0" layoutY="351.0" mnemonicParsing="false" onAction="#ana_menu" text="Ana Menü" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

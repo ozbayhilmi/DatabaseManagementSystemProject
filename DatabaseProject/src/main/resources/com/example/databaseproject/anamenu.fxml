@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseproject.AnaMenuController">
+   <children>
+      <Pane layoutX="3.0" layoutY="1.0" prefHeight="488.0" prefWidth="755.0" AnchorPane.bottomAnchor="-24.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-67.0" AnchorPane.topAnchor="1.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="584.0" layoutX="-6.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="74.0" layoutX="-10.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="966.0" />
+            <TextField fx:id="searchText" layoutX="174.0" layoutY="19.0" prefHeight="30.0" prefWidth="384.0" style="-fx-background-radius: 30;" />
+            <Button layoutX="575.0" layoutY="19.0" mnemonicParsing="false" onAction="#search" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 30;" text="Ara" />
+            <Button layoutX="35.0" layoutY="185.0" mnemonicParsing="false" onAction="#favories" text="Favorilerim" />
+            <Button layoutX="35.0" layoutY="224.0" mnemonicParsing="false" onAction="#account" prefHeight="30.0" prefWidth="82.0" text="Hesabım" />
+            <Button layoutX="36.0" layoutY="266.0" mnemonicParsing="false" onAction="#products" prefHeight="30.0" prefWidth="81.0" text="Ürünlerim" />
+            <TableView fx:id="table" layoutX="234.0" layoutY="97.0" prefHeight="374.0" prefWidth="660.0">
+              <columns>
+                  <TableColumn fx:id="itemId" prefWidth="119.60671997070312" text="Item Id" />
+                <TableColumn fx:id="name" prefWidth="95.92318725585938" text="Ürün İsmi" />
+                <TableColumn fx:id="description" minWidth="9.576812744140625" prefWidth="82.0" text="Açıklama" />
+                  <TableColumn fx:id="price" prefWidth="78.0" text="Fiyat" />
+                  <TableColumn fx:id="categoryId" prefWidth="85.02438354492188" text="Kategori Id" />
+                  <TableColumn fx:id="userId" prefWidth="90.7640380859375" text="Kullanıcı Id" />
+                  <TableColumn fx:id="konum" prefWidth="110.23602294921875" text="Konum" />
+              </columns>
+            </TableView>
+            <Button layoutX="40.0" layoutY="413.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: red;" text="Çıkış Yap" textFill="WHITE" />
+            <Button layoutX="36.0" layoutY="309.0" mnemonicParsing="false" onAction="#siparisler" prefHeight="30.0" prefWidth="82.0" text="Siparişler" />
+            <Text fx:id="text" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        " wrappingWidth="155.0">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Text layoutX="17.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOŞGELDİNİZ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="378.0" layoutY="512.0" mnemonicParsing="false" onAction="#siparis_ver" prefHeight="30.0" prefWidth="96.0" text="Sipariş Ver" />
+            <Button layoutX="564.0" layoutY="512.0" mnemonicParsing="false" onAction="#favorilere_ekle" text="Favorilere ekle" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
