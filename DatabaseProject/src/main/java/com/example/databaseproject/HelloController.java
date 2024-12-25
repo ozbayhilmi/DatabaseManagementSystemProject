@@ -67,12 +67,16 @@ public class HelloController {
                 stage.show();
 
             } else {
-                // Kullanıcı bulunamadı
-                text.setText("Olumsuz giriş. E-posta veya şifre hatalı.");
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("Kullanıcı veya şifre hatalı!");
+                alert.showAndWait();
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            text.setText("Veritabanı hatası: " + e.getMessage());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Veritabanı Hatası!");
+            alert.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
             text.setText("Hata: " + e.getMessage());

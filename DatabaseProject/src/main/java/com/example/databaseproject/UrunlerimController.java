@@ -102,16 +102,15 @@ public class UrunlerimController {
         String password = "Data.12345";
 
         String sql = """
-            SELECT 
-                i.name AS item_name, 
-                i.description AS item_description, 
-                i.price AS item_price, 
-                i.location AS item_location, 
-                c.name AS category_name
-            FROM Items i
-            JOIN Categories c ON i.category_id = c.category_id
-            WHERE i.user_id = ?;
-        """;
+        SELECT 
+            item_name, 
+            item_description, 
+            item_price, 
+            item_location, 
+            category_name
+        FROM ViewM
+        WHERE user_id = ?; 
+    """;
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
              PreparedStatement stmt = conn.prepareStatement(sql)) {

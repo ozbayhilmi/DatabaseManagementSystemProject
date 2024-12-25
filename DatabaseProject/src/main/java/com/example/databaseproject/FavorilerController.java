@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -57,11 +58,10 @@ public class FavorilerController {
     }
 
     private void loadFavoriteItems() {
-        String query = "SELECT Favorites.favorite_id, Items.item_id, Items.name, Items.description, Items.price, Items.location " +
-                "FROM Favorites INNER JOIN Items ON Favorites.item_id = Items.item_id WHERE Favorites.user_id = ?";
+        String query = "{CALL GetFavoriteItemsByUserId(?)}";
 
         try (Connection conn = Database.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+             CallableStatement stmt = conn.prepareCall(query)) {
 
             stmt.setInt(1, HelloController.userId); // Giriş yapan kullanıcının ID'sini kullan
 
@@ -73,7 +73,7 @@ public class FavorilerController {
                 String description = rs.getString("description");
                 double price = rs.getDouble("price");
                 String location = rs.getString("location");
-                
+
                 favoriteItems.add(new FavoriteItem(favoriteId, itemId, name, description, price, location));
             }
 
@@ -84,6 +84,7 @@ public class FavorilerController {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     void delete_button(ActionEvent event) {
